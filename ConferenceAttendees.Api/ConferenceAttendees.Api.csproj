@@ -8,6 +8,7 @@
     <UserSecretsId>4b8b0f04-b1b7-4e14-a9fd-826acfdb9463</UserSecretsId>        
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
 	<ContainerRepository>ConferenceAttendees.Api.DotNetPublish</ContainerRepository>
+	<DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
