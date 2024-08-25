@@ -8,8 +8,6 @@ services:
       dockerfile: ConferenceAttendees.Api/Dockerfile
     ports:
        - "7106:7106"
-    environment:
-       - ASPNETCORE_URLS=http://*:7106
     depends_on: [mssql,seq_logs]
     networks:
         - app-network

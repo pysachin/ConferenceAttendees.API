@@ -42,3 +42,6 @@
 
 # Migration script
 	dotnet ef migrations script --idempotent
+
+# Run Docker With Multiple Docker Files
+	docker-compose -f docker-compose.yml -f docker-compose.stage.yml up -d
