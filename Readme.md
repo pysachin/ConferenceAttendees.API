@@ -33,9 +33,12 @@
 	npm uninstall -g @angular/cli
 	npm install -g @angular/cli@latest
 	docker build --pull --rm -f "Dockerfile" -t conferenceattendeesui:latest "."
-	docker run -p 8080:80 conferenceattendeesui
+	docker run -p 8084:8084 conferenceattendeesui
 
 # Setup Domain Name In Local
 	C:\Windows\System32\drivers\etc
 	Edit HOSTS File (add below line and save file)
 	127.0.0.1 api.conferenceattendees.com
+
+# Migration script
+	dotnet ef migrations script --idempotent

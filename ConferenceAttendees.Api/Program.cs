@@ -32,11 +32,6 @@ builder.Services.AddCors(options =>
 
 WebApplication app = builder.Build();
 
-using (IServiceScope scope = app.Services.CreateScope())
-{
-    ApplicationDbContext db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-    db.Database.Migrate();
-}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
