@@ -16,10 +16,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "readme", "readme", "{4ADF99
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{64E0EDEB-4867-4780-B805-ECBCE63A0A8E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nginx", "nginx", "{2EF21C03-582C-417F-A8E1-225B4FC94A80}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "k8s", "k8s", "{4331621A-854A-4E3A-AC4B-A771AFF5671D}"
 	ProjectSection(SolutionItems) = preProject
-		Dockerfile = Dockerfile
-		nginx.conf = nginx.conf
+		k8s\namespace.yml = k8s\namespace.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nginx", "nginx", "{572CEACF-EE96-4E74-B36D-02577EFF4D59}"
+	ProjectSection(SolutionItems) = preProject
+		nginx\Dockerfile = nginx\Dockerfile
+		nginx\nginx.conf = nginx\nginx.conf
 	EndProjectSection
 EndProject
 Global

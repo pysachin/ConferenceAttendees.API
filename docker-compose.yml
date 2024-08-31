@@ -33,7 +33,7 @@ services:
         - app-network
   nginx:
     build:
-        context: .
+        context: .\nginx
         dockerfile: Dockerfile
     ports:
         - "8083:8083"
