@@ -1,0 +1,35 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: conferenceattendeesui
+    namespace: cloud-native-dev
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: conferenceattendeesui
+    spec:
+      containers:
+      - name: conferenceattendeesui
+        image: pysachindocker/conferenceattendees-ui:2.0
+        ports:
+        - containerPort: 8084
+  selector:
+    matchLabels:
+      app: conferenceattendeesui
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: conferenceattendeesui-svc
+  namespace: cloud-native-dev
+spec:
+  type: NodePort
+  ports:
+  - port: 8084
+    targetPort: 8084
+    nodePort: 32002
+  selector:
+    app: conferenceattendeesui

@@ -45,3 +45,32 @@
 
 # Run Docker With Multiple Docker Files
 	docker-compose -f docker-compose.yml -f docker-compose.stage.yml up -d
+
+# K8S command
+	-- add name space in k8s
+	kubectl apply -f .\namespace.yml
+	-- add mssql server in k8s server
+	kubectl apply -f .\mssql-deployment.yaml
+	-- view service
+	kubectl get all
+	kubectl get all --namespace=cloud-native-dev
+	-- add seq service in k8s server
+	kubectl apply -f .\seq-deployment.yaml
+	-- add seq service in k8s server (**change the folder location of yaml files)
+	kubectl apply -f .\k8s\api-deployment.yaml
+
+# Push Conferenceattendess-api project in Docker Hub
+	-- let build a image the project
+	docker build -t conferenceattendees-api -f .\ConferenceAttendees.Api\Dockerfile .
+	-- let commit the image in local
+	docker image tag conferenceattendees-api:latest pysachindocker/conferenceattendees-api:latest
+	-- let push the image to docker hub
+	docker push pysachindocker/conferenceattendees-api:latest
+
+# Push Conferenceattendess-ui project in Docker Hub
+	-- let build a image the project
+	docker build -t conferenceattendees-ui -f .\Dockerfile .                         
+	-- let commit the image in local
+	docker image tag conferenceattendees-ui:latest pysachindocker/conferenceattendees-ui:latest
+	-- let push the image to docker hub
+	docker push pysachindocker/conferenceattendees-api:latest

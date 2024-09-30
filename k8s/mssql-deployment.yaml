@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mssql
+  namespace: cloud-native-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mssql
+  template:
+    metadata:
+      labels:
+        app: mssql
+    spec:
+      containers:
+      - name: mssql
+        image: pysachindocker/conferenceattendeedb
+        ports:
+        - containerPort: 1433
+  
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mssql-svc
+  namespace: cloud-native-dev
+spec:
+  selector:
+    app: mssql
+  ports:
+    - protocol: TCP
+      port: 1434
+      targetPort: 1433
+      nodePort: 31433
+  type: NodePort

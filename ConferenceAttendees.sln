@@ -18,7 +18,11 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "k8s", "k8s", "{4331621A-854A-4E3A-AC4B-A771AFF5671D}"
 	ProjectSection(SolutionItems) = preProject
+		k8s\api-deployment.yaml = k8s\api-deployment.yaml
+		k8s\mssql-deployment.yaml = k8s\mssql-deployment.yaml
 		k8s\namespace.yml = k8s\namespace.yml
+		k8s\seq-deployment.yaml = k8s\seq-deployment.yaml
+		k8s\ui-deployment.yaml = k8s\ui-deployment.yaml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nginx", "nginx", "{572CEACF-EE96-4E74-B36D-02577EFF4D59}"
