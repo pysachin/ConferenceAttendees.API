@@ -66,6 +66,8 @@
 	docker image tag conferenceattendees-api:latest pysachindocker/conferenceattendees-api:latest
 	-- let push the image to docker hub
 	docker push pysachindocker/conferenceattendees-api:latest
+	-- k8s api
+	kubectl apply -f .\k8s\api-deployment.yaml
 
 # Push Conferenceattendess-ui project in Docker Hub
 	-- let build a image the project

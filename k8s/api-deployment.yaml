@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: conferenceattendeesapi
-        image: pysachindocker/conferenceattendees-api:latest
+        image: pysachindocker/conferenceattendees-api:1.0
         ports:
         - containerPort: 80
         env:
