@@ -16,6 +16,11 @@ spec:
       containers:
       - name: mssql
         image: pysachindocker/conferenceattendeedb
+        env:
+         - name: ACCEPT_EULA
+           value: "Y"
+         - name: MSSQL_SA_PASSWORD
+           value: sachin@123
         ports:
         - containerPort: 1433
         volumeMounts:

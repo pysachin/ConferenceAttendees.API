@@ -85,3 +85,16 @@
 	kubectl get pvc -n=cloud-native-dev
 	-- command to get details of running app
 	kubectl describe pod -l app=mssql -n=cloud-native-dev
+
+# Delete PODs
+	-- command to delete PODS by name
+	kubectl get all --namespace=cloud-native-dev
+	kubectl delete pod pod/mssql-5b4679478b-6cwkf -n=cloud-native-dev
+
+	-- command to delete all pods in namespace
+	kubectl delete all -n=cloud-native-dev --all
+
+	-- create all PODs again
+	kubectl apply -f .\k8s\.
+  
+  
