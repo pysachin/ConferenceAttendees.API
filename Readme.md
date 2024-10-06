@@ -76,3 +76,12 @@
 	docker image tag conferenceattendees-ui:latest pysachindocker/conferenceattendees-ui:latest
 	-- let push the image to docker hub
 	docker push pysachindocker/conferenceattendees-api:latest
+
+# Create Volume for mssql
+	-- create the persistence-volumes.yml
+	kubectl apply -f .\k8s\persistence-volumes.yml
+	-- command to check storage class
+	kubectl get storageclass
+	kubectl get pvc -n=cloud-native-dev
+	-- command to get details of running app
+	kubectl describe pod -l app=mssql -n=cloud-native-dev
